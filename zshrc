@@ -14,7 +14,12 @@ prompt pure
 #load_all_files_in before
 #load_all_files_in ""
 
-export PATH="$PATH:`yarn global bin`"
-export PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$PATH:`yarn global bin`"
+PATH="$HOME/.rbenv/bin:$PATH"
+export PATH
+
+cdpath=($HOME/Code/thoughtbot)
 
 eval "$(rbenv init -)"
+bindkey -v
+autoload -U compinit && compinit
