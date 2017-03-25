@@ -22,7 +22,7 @@ Plug 'dietsche/vim-lastplace'
 " New status bar
 Plug 'itchyny/lightline.vim'
 " Wrap selection with punctuation
-Plug 'timpope/vim-surround'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 silent! colorscheme molokai
