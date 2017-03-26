@@ -23,16 +23,20 @@ Plug 'dietsche/vim-lastplace'
 Plug 'itchyny/lightline.vim'
 " Wrap selection with punctuation
 Plug 'tpope/vim-surround'
+" Install Papercolor colorscheme
+Plug 'NLKNguyen/papercolor-theme'
+" Move between Vim and tmux splits without determining the appropriate prefix
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
-silent! colorscheme molokai
+set background=dark
+colorscheme molokai
 syntax enable
 
 set tabstop=2
 set expandtab
 set softtabstop=2
 set shiftwidth=2
-
 
 set number
 set relativenumber
