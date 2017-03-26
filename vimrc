@@ -29,6 +29,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
+set t_Co=256
 set background=dark
 colorscheme molokai
 syntax enable
