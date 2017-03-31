@@ -16,6 +16,7 @@ prompt pure
 
 PATH="$PATH:`yarn global bin`"
 PATH="$HOME/.rbenv/bin:$PATH"
+PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH
 
 cdpath=($HOME/Code/thoughtbot)
