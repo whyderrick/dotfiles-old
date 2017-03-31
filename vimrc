@@ -20,13 +20,15 @@ Plug 'tpope/vim-repeat'
 " Intelligently reopen files where you left off
 Plug 'dietsche/vim-lastplace'
 " New status bar
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 " Wrap selection with punctuation
 Plug 'tpope/vim-surround'
-" Install Papercolor colorscheme
-Plug 'NLKNguyen/papercolor-theme'
 " Move between Vim and tmux splits without determining the appropriate prefix
 Plug 'christoomey/vim-tmux-navigator'
+" Add the colors. All of theme
+Plug 'flazz/vim-colorschemes'
+" Install Papercolor colorscheme
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 set t_Co=256
@@ -34,6 +36,7 @@ set background=dark
 colorscheme molokai
 syntax enable
 
+" Set indent to 2 spaces in any circumstance I can think of 
 set tabstop=2
 set expandtab
 set softtabstop=2
@@ -42,9 +45,21 @@ set shiftwidth=2
 set number
 set relativenumber
 
+" Incremental search with highlighted results
 set incsearch
 set hlsearch
 
+" Open splits to the bottom right instead of top left
+set splitbelow splitright
+
+" Smartcase search terms
+set smartcase
+set ignorecase
+
+" Enable clipboard
+set clipboard=unnamed
+
+" Map leader to spacebar
 let mapleader=" "
 let g:spec_runner_dispatcher = 'VtrSendCommand! {command}'
 
