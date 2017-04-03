@@ -29,6 +29,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'flazz/vim-colorschemes'
 " Install Papercolor colorscheme
 Plug 'NLKNguyen/papercolor-theme'
+" Install Emmet-Vim
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 set t_Co=256
@@ -72,6 +74,19 @@ let g:VtrPercentage = 30
 map <Leader>a <Plug>RunCurrentSpecFile
 " Use <Leader>l to run the current line in a spec.
 map <Leader>l <Plug>RunFocusedSpec
+
+" Open vimrc in a split
+nnoremap <Leader>.ve :sp $MYVIMRC<CR>
+" Reload/re-source vimrc in current buffer
+nnoremap <Leader>.vr :source $MYVIMRC<CR>
+" Open zshrc in a split
+nnoremap <Leader>.ze :sp $MYZSHRC<CR>
+" Reload/re-source zshrc
+nnoremap <Leader>.zr :!source $MYZSHRC<CR>
+" Open tmuz in a split
+nnoremap <Leader>.te :sp $MYTMUXCONF<CR>
+" Reload/re-source zshrc
+nnoremap <Leader>.tr :!source $MYTMUXCONF<CR>
 
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
