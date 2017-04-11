@@ -88,6 +88,7 @@ nnoremap <Leader>.te :sp $MYTMUXCONF<CR>
 " Reload/re-source zshrc
 nnoremap <Leader>.tr :!source $MYTMUXCONF<CR>
 
+nnoremap <Leader>n :nohl<CR>
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
