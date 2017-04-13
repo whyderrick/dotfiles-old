@@ -1,36 +1,39 @@
 call plug#begin('~/.vim/plugged')
-Plug 'gabebw/vim-spec-runner'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'tpope/vim-rails'
-" :Ag is like :grep but with `ag`
-Plug 'rking/ag.vim'
-" Easy commenting/uncommenting in many languages
-Plug 'tomtom/tcomment_vim'
-" <Tab> intelligently decides whether to autocomplete or indent
-Plug 'ervandew/supertab'
-" Auto-add `end` in Ruby and similar comparable phrases in other languages
-Plug 'tpope/vim-endwise'
-" Fuzzy find
-Plug 'ctrlpvim/ctrlp.vim'
-"" Automatically trim trailing whitespace on :write
-" Plug 'derekprior/vim-trimmer'
-Plug 'duggiefresh/vim-easydir'
-" Make `.` repeat actions that plugins create too
-Plug 'tpope/vim-repeat'
-" Intelligently reopen files where you left off
-Plug 'dietsche/vim-lastplace'
-" New status bar
-Plug 'vim-airline/vim-airline'
-" Wrap selection with punctuation
-Plug 'tpope/vim-surround'
-" Move between Vim and tmux splits without determining the appropriate prefix
+Plug 'christoomey/vim-run-interactive'
 Plug 'christoomey/vim-tmux-navigator'
-" Add the colors. All of theme
+Plug 'christoomey/vim-tmux-runner'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dietsche/vim-lastplace'
+Plug 'duggiefresh/vim-easydir'
+Plug 'elixir-lang/vim-elixir'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
 Plug 'flazz/vim-colorschemes'
-" Install Emmet-Vim
+Plug 'gabebw/vim-spec-runner'
+Plug 'janko-m/vim-test'
+Plug 'kchmck/vim-coffee-script'
 Plug 'mattn/emmet-vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/syntastic'
+Plug 'slim-template/vim-slim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/tComment'
 call plug#end()
 
+let mapleader=" "
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -113,7 +116,6 @@ endif
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn guibg=#000000 ctermbg=gray
 
 " Numbers
 set number
@@ -145,10 +147,10 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-test mappings
-nnoremap <silent> <Leader>t :TestFile<CR>
-nnoremap <silent> <Leader>s :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
+nnoremap <silent> <Leader>a :TestFile<CR>
+nnoremap <silent> <Leader>l :TestNearest<CR>
+nnoremap <silent> <Leader>? :TestLast<CR>
+nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <leader>gt :TestVisit<CR>
 
 " Run commands that require an interactive shell
@@ -187,8 +189,8 @@ set diffopt+=vertical
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-set background=dark
-colorscheme molokai
+
+colorscheme solarized
 
 " Searching
 "" Incremental search with highlighted results
@@ -200,17 +202,16 @@ set ignorecase
 " Enable clipboard
 set clipboard=unnamed
 
-" Map leader to spacebar
-let g:spec_runner_dispatcher = 'VtrSendCommand! {command}'
+"let g:spec_runner_dispatcher = 'VtrSendCommand! {command}'
 
 " Open runner pane to the right, not to the bottom
-let g:VtrOrientation = "h"
+"let g:VtrOrientation = "h"
 " " Take up this percentage of the screen
-let g:VtrPercentage = 30
+"let g:VtrPercentage = 25 
 
-"" Use <Leader>a to run the current spec file.
+" Use <Leader>a to run the current spec file.
 " nnoremap <Leader>a <Plug>RunCurrentSpecFile
-"" Use <Leader>l to run the current line in a spec.
+" Use <Leader>l to run the current line in a spec.
 " nnoremap <Leader>l <Plug>RunFocusedSpec
 
 " Open vimrc in a split
@@ -225,5 +226,5 @@ nnoremap <Leader>.zr :!source $MYZSHRC<CR>
 nnoremap <Leader>.te :sp $MYTMUXCONF<CR>
 " Reload/re-source zshrc
 nnoremap <Leader>.tr :!source $MYTMUXCONF<CR>
-
+" Remove highlight from searching
 nnoremap <Leader>n :nohl<CR>
