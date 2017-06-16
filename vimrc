@@ -96,6 +96,9 @@ set list listchars=tab:»·,trail:·,nbsp:·
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
+" Configure CtrlP to show more results
+let g:ctrl_p_match_window = 'bottom,max:15'
+"
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
   " Use Ag over Grep
@@ -147,9 +150,9 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-test mappings
-nnoremap <silent> <Leader>a :TestFile<CR>
-nnoremap <silent> <Leader>l :TestNearest<CR>
-nnoremap <silent> <Leader>? :TestLast<CR>
+nnoremap <Leader>tf :TestFile<CR>
+nnoremap <Leader>t :TestNearest<CR>
+nnoremap <silent> <Leader>l :TestLast<CR>
 nnoremap <silent> <Leader>ts :TestSuite<CR>
 nnoremap <silent> <leader>gt :TestVisit<CR>
 
@@ -191,6 +194,7 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 colorscheme solarized
+set bg=light
 
 " Searching
 "" Incremental search with highlighted results
