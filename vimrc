@@ -231,4 +231,4 @@ nnoremap <Leader>.te :sp $MYTMUXCONF<CR>
 " Reload/re-source zshrc
 nnoremap <Leader>.tr :!source $MYTMUXCONF<CR>
 " Remove highlight from searching
-nnoremap <Leader>n :nohl<CR>
+nnoremap <Leader>h :nohl<CR>
