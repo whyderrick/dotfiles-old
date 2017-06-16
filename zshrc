@@ -62,12 +62,12 @@ prompt pure
 # load_all_files_in ""
 #
 PATH="$PATH:`yarn global bin`"
+PATH=".git/safe/../../bin:$PATH"
 PATH="$HOME/.rbenv/bin:$PATH"
 PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH
 
 cdpath=($HOME/Code/thoughtbot)
 
-eval "$(rbenv init -)"
 bindkey -v
 autoload -U compinit && compinit
